@@ -7,7 +7,7 @@ import Footer from './components/footer/Footer';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter  basename="/sars_">
     <NavBar />
 
     <Routes>

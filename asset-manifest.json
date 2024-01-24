@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/sars_/static/css/main.8335c967.css",
-    "main.js": "/sars_/static/js/main.1ed26a5b.js",
+    "main.js": "/sars_/static/js/main.d017e884.js",
     "static/media/reunion.jpeg": "/sars_/static/media/reunion.03e6afe6638a5f3076ac.jpeg",
     "index.html": "/sars_/index.html",
     "main.8335c967.css.map": "/sars_/static/css/main.8335c967.css.map",
-    "main.1ed26a5b.js.map": "/sars_/static/js/main.1ed26a5b.js.map"
+    "main.d017e884.js.map": "/sars_/static/js/main.d017e884.js.map"
   },
   "entrypoints": [
     "static/css/main.8335c967.css",
-    "static/js/main.1ed26a5b.js"
+    "static/js/main.d017e884.js"
   ]
 }

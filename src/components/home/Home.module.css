@@ -1,0 +1,85 @@
+.home {
+    background-image: url('/src/assets/reunion.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(141,169,196,0.5);
+    padding: 80px;
+}
+
+.h_left {
+    max-width: 60%; 
+    padding: 2rem;
+    color: var(--color-primary);
+}
+
+.h_right {
+    width: 40%;
+    height: 300px;
+    padding: 3rem;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    border: 1px solid var(--color-claro);
+}
+
+.home_title {
+    font-size: 5rem; 
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-family: var(--second-font-family);
+    letter-spacing: 5px;
+    color: var(--color-primary);
+}
+
+.home_subtitle {
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem;
+}
+
+.home_cta {
+    font-size: 1.8rem; 
+    font-weight: 600;
+    color: var(--color-primary);
+    display: block;
+}
+
+.home_button{
+    width: 100%;
+    font-size: 20px;
+    color: var(--color-claro);
+    background:none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 1px var(--color-claro) solid;
+    cursor: pointer;
+    transition: background-color 0.8s ease, color 0.8s ease;
+
+}
+.home_button:hover{
+    background-color: var(--color-claro);
+    color: var(--color-primary);
+}
+.callText{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-primary);
+    line-height: 20px;
+    text-align: center;
+}

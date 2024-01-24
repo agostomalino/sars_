@@ -1,0 +1,21 @@
+.footer{
+    background-color: var(--color-primary);
+    color: var(--color-claro);
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 20px;
+    padding: 50px 0px;
+}
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--second-font-family);
+    letter-spacing: 5px;
+}
+.copyright{
+    font-size: 12px;
+    line-height: 10px;
+}

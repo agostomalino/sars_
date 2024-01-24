@@ -1,10 +1,12 @@
 .section {
+    min-height: 400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px;
     margin: 20px 80px;
-    background-color: var(--color-tertiary);
+    /* background-color: var(--color-tertiary); */
+    background-color: rgba(141, 169, 196, 0.3);
 }
 
 .containerLeft {
@@ -14,6 +16,18 @@
 
 .containerRight {
     flex: 1;
+}
+
+.titulo{
+    color: var(--color-primary);
+    font-family: var(--second-font-family);
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-bottom: 40px;
+}
+
+.description{
+    line-height: 28px;
 }
 
 .img {

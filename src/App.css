@@ -1,16 +1,25 @@
 :root{
-    --color-primary:black;
-    --color-secondary: white;
-    --color-tertiary: rgb(220, 220, 220);
+    --color-primary:#0B2545;
+    --color-claro: #EEF4ED;
+    /* --color-tertiary: rgb(220, 220, 220); */
+    --color-tertiary:#8DA9C4;
+    --color-dark:#13315c;
+    --color-light-dark:#134074;
+
+    /* FONTS */
+    --font-family:'Roboto', sans-serif;
+    --second-font-family: 'Montserrat', sans-serif;
 }
 
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
+    scroll-behavior: smooth;
 }
 
 a{

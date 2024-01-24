@@ -1,3 +1,9 @@
+:root{
+    --color-primary:black;
+    --color-secondary: white;
+    --color-tertiary: rgb(220, 220, 220);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -14,3 +20,4 @@ a{
 ul{
     list-style: none;
 }
+

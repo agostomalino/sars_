@@ -1,0 +1,22 @@
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    margin: 20px 80px;
+    background-color: var(--color-tertiary);
+}
+
+.containerLeft {
+    flex: 1;
+    padding: 0px 60px;
+}
+
+.containerRight {
+    flex: 1;
+}
+
+.img {
+    width: 100%; 
+    height: auto;
+}  

@@ -1,0 +1,26 @@
+.header{
+    background-color: black;
+    color: white;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+.logo{
+    color: white;
+}
+.btn-nav{
+    color: black;
+    background-color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 3px;
+    cursor:pointer;
+    font-size: 20px;
+}
+
+.btn-nav:hover{
+    box-shadow: 2px 5px 10px 0px rgba(255, 255, 255, 0.7);
+}

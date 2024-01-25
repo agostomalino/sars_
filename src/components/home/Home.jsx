@@ -11,15 +11,17 @@ const Home = () => {
                 <p className={classes.home_subtitle}>Servicio Asociado de Reclamos de Siniestros</p>
             </div>
             <div className={classes.h_right}>
-                <h3 className={classes.home_cta}>HACE TU RECLAMO!</h3>
-                <p className={classes.callText}>Carga tu reclamo en el formulario para que nuestros asesores lo analicen.</p>
-                <button className={classes.home_button}>Reclamos</button>
+                <h3 className={classes.home_cta}>HACE TU RECLAMO</h3>
+                <p className={classes.callText}>Cargá el siniestro en el formulario para que nuestros asesores lo analicen.</p>
+                <button className={classes.home_button}>RECLAMOS</button>
             </div>
         </div>
       </section>
+      <div className={classes.containerSections}>
+        <Section left={true}/>
+        <Section left={false}/>
+      </div>
 
-      <Section left={true}/>
-      <Section left={false}/>
   </>
   )
 }

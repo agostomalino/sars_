@@ -1,14 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
 :root{
-    --color-primary:#0B2545;
-    --color-claro: #EEF4ED;
+    /* PALETA DE COLORES */
+    --color-primary:#000000;
+    --color-claro: #DFDFDF;
     /* --color-tertiary: rgb(220, 220, 220); */
-    --color-tertiary:#8DA9C4;
-    --color-dark:#13315c;
-    --color-light-dark:#134074;
+    --color-tertiary:#9F9F9F;
+    --color-dark:#404040;
+    --color-light-dark:#808080;
+    --color-transparent: rgba(128,128,128,0.5);
+
 
     /* FONTS */
-    --font-family:'Roboto', sans-serif;
+    --font-family: 'Open Sans', sans-serif;
     --second-font-family: 'Montserrat', sans-serif;
+
+    /* PADDING */
+    --padding: 200px;
 }
 
 *{

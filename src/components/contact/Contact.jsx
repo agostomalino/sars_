@@ -11,6 +11,10 @@ const Contact = () => {
                 <li><p className={classes.list_text}>asesorsars@sars.com</p></li>
                 <li><p className={classes.list_text}>Córdoba, Argentina</p></li>
             </ul>
+            <ul>
+                <li><p className={classes.list_text}>Whatsapp</p></li>
+                <li><p className={classes.list_text}>asesorsars@sars.com</p></li>
+            </ul>
         </section>
     )
 }

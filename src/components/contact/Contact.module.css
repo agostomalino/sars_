@@ -1,0 +1,22 @@
+.container_contacto{
+    min-height: 500px;
+    padding: 80px 0px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 40px;
+}
+
+.title{
+    font-size: 40px;
+    word-wrap: break-word;
+    font-family: var(--second-font-family);
+    margin-right: 60px;
+    width: 30%;
+    
+}
+
+.list_text{
+    font-size: 16px;
+    line-height: 30px;
+}

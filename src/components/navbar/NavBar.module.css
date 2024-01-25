@@ -1,6 +1,6 @@
 .header{
-    background-color: var(--color-primary);
-    color: white;
+    background-color: var(--color-claro);
+    /* color: var(--color-primary); */
     display: flex;
     height: 80px;
     align-items: center;
@@ -12,25 +12,22 @@
 }
 
 .logo{
-    color: var(--color-claro);
+    color: var(--color-primary);
     font-family: var(--second-font-family);
     letter-spacing: 5px;
 }
 .btn{
-    color: var(--color-claro);
+    color: var(--color-primary);
     display: block;
     padding: 10px;
-    border-radius: 3px;
     cursor:pointer;
     font-family: var(--second-font-family);
-    /* font-weight: 500; */
     font-size: 16px;
-    border: 1px solid;
+    border: 2px solid;
     transition: background-color 0.8s ease, color 0.8s ease;
 }
 
 .btn:hover{
-    /* box-shadow: 2px 5px 10px 0px rgba(255, 255, 255, 0.7); */
-    color: var(--color-primary);
-    background-color: var(--color-claro);
+    color: var(--color-claro);
+    background-color: var(--color-primary);
 }

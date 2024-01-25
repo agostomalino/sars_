@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Home.module.css';
 import Section from '../section/Section';
+import Contact from '../contact/Contact';
 
 const Home = () => {
   return (<>
@@ -20,6 +21,7 @@ const Home = () => {
       <div className={classes.containerSections}>
         <Section left={true}/>
         <Section left={false}/>
+        <Contact />
       </div>
 
   </>

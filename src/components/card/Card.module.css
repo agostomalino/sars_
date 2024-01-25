@@ -1,0 +1,14 @@
+.card{
+    height: 300px;
+    width: 300px;
+    padding: 30px 25px;
+    margin: 40px 0px;
+    border: 2px solid var(--color-tertiary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title{
+    margin-bottom: 20px;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Home.module.css';
 import Section from '../section/Section';
 import Contact from '../contact/Contact';
+import Card from '../card/Card';
 
 const Home = () => {
   return (<>
@@ -21,6 +22,14 @@ const Home = () => {
       <div className={classes.containerSections}>
         <Section left={true}/>
         <Section left={false}/>
+        <div className={classes.container_servicios}>
+          <h2 className={classes.cards_title}>Servicios</h2>
+          <div className={classes.cards}>
+              <Card />
+              <Card />
+              <Card />
+          </div>
+        </div>
         <Contact />
       </div>
 

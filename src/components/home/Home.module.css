@@ -94,3 +94,14 @@
     padding: 40px var(--padding);
     background-color: var(--color-claro);
 }
+.cards{
+    display: flex;
+    justify-content: space-between;
+}
+.cards_title{
+    font-size: 40px;
+    font-family: var(--second-font-family);
+}
+.container_servicios{
+    padding-top: 80px;
+}

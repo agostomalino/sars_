@@ -4,8 +4,9 @@
 :root{
     /* PALETA DE COLORES */
     --color-primary:#000000;
-    --color-claro: #DFDFDF;
-    --color-tertiary:#9F9F9F;
+    --color-claro: #FFF;
+    --color-tertiary: #DFDFDF;
+    /* --color-tertiary:#9F9F9F; */
     --color-dark:#404040;
     --color-light-dark:#808080;
     --color-transparent: rgba(128,128,128,0.5);

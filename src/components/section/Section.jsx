@@ -2,18 +2,16 @@ import React from 'react';
 import classes from './Section.module.css';
 import reunionImage from '../../assets/reunion.jpeg';
 
-const Section = ({ left }) => {
+const Section = ({ left, title, description }) => {
     const flexDirection = left ? 'row' : 'row-reverse';
     const sectionStyle = { flexDirection: flexDirection };
 
     return (
         <section className={classes.section} style={sectionStyle}>
         <div className={classes.containerLeft}>
-            <h2 className={classes.titulo}>TITULO</h2>
+            <h2 className={classes.titulo}>{title}</h2>
             <p className={classes.description}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, rem optio. Eum
-            consequuntur aut, molestiae minima quis optio dolore porro totam, voluptatem qui vero
-            aspernatur omnis, quasi nam officiis fuga.
+                {description}
             </p>
         </div>
         <div className={classes.containerRight}>

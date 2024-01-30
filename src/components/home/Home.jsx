@@ -3,6 +3,7 @@ import classes from './Home.module.css';
 import Section from '../section/Section';
 import Contact from '../contact/Contact';
 import Card from '../card/Card';
+import CallToAction from '../callTo/CallToAction';
 
 const Home = () => {
     return (<>
@@ -16,16 +17,7 @@ const Home = () => {
             </div>
         </section>
         <div className={classes.containerSections}>
-        <Section 
-            left={true} 
-            title="Alivio de Carga Laboral" 
-            description="Liberamos a los productores de la tarea de manejar reclamos, permitiéndoles enfocarse en sus funciones principales."
-        />
-        <Section 
-            left={false} 
-            title="Generación de Ingresos Adicionales" 
-            description="Obtienen beneficios económicos cuando se resuelven los reclamos, sin incurrir en costos adicionales"
-        />
+
         <div className={classes.container_servicios}>
             <h2 className={classes.cards_title}>Servicios</h2>
             <div className={classes.cards}>
@@ -43,6 +35,20 @@ const Home = () => {
                 />
             </div>
         </div>
+
+        <Section 
+            left={true} 
+            title="Alivio de Carga Laboral" 
+            description="Liberamos a los productores de la tarea de manejar reclamos, permitiéndoles enfocarse en sus funciones principales."
+        />
+        <Section 
+            left={false} 
+            title="Generación de Ingresos Adicionales" 
+            description="Obtienen beneficios económicos cuando se resuelven los reclamos, sin incurrir en costos adicionales"
+        />
+
+        <CallToAction/>
+
         <Contact />
         </div>
 

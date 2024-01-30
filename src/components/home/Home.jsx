@@ -11,7 +11,7 @@ const Home = () => {
             <div className={`${classes.home_content} container`}>
                 <div className={classes.h_left}>
                     <h1 className={classes.home_title}>Servicio Asociado de <span className={classes.color_blue}>Cobro de Siniestros</span></h1>
-                    <p className={classes.home_subtitle}>Realizá tu reclamo para que especialistas en siniestros viales lo analicen.</p>
+                    <p className={classes.home_subtitle}>Ingresá a la plataforma de reclamos para cargar tu caso.</p>
                     <button className={classes.home_button}>Iniciar Sesión</button>
                 </div>
             </div>
@@ -35,17 +35,18 @@ const Home = () => {
                 />
             </div>
         </div>
-
-        <Section 
-            left={true} 
-            title="Alivio de Carga Laboral" 
-            description="Liberamos a los productores de la tarea de manejar reclamos, permitiéndoles enfocarse en sus funciones principales."
-        />
-        <Section 
-            left={false} 
-            title="Generación de Ingresos Adicionales" 
-            description="Obtienen beneficios económicos cuando se resuelven los reclamos, sin incurrir en costos adicionales"
-        />
+        <div className={classes.sections}>
+            <Section 
+                left={true} 
+                title="Alivio de Carga Laboral" 
+                description="Liberamos a los productores de la tarea de manejar reclamos, permitiéndoles enfocarse en sus funciones principales."
+            />
+            <Section 
+                left={false} 
+                title="Generación de Ingresos Adicionales" 
+                description="Obtienen beneficios económicos cuando se resuelven los reclamos, sin incurrir en costos adicionales"
+            />
+        </div>
 
         <CallToAction/>
 

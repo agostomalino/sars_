@@ -4,13 +4,16 @@
     padding: 30px 25px;
     margin: 40px 0px;
     border: 2px solid var(--color-azul);
+    border-radius: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 .title{
     margin-top: 20px;
+    color: var(--color-azul);
 }
 
 .text{

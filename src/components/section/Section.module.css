@@ -1,16 +1,17 @@
 .section {
-    min-height: 400px;
+    min-height: 300px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px;
     margin-top: 20px;
     background-color: var(--color-transparent);
+    border-radius: 50px;
 }
 
 .containerLeft {
     flex: 1;
-    padding: 0px 60px;
+    padding: 0px 40px;
 }
 
 .containerRight {
@@ -18,10 +19,9 @@
 }
 
 .titulo{
-    color: var(--color-primary);
+    color: var(--color-azul);
     font-family: var(--second-font-family);
     font-size: 30px;
-    letter-spacing: 2px;
     margin-bottom: 40px;
 }
 
@@ -32,5 +32,4 @@
 
 .img {
     width: 100%; 
-    height: auto;
 }  

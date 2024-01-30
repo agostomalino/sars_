@@ -3,6 +3,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/navbar/NavBar';
 import Home  from './components/home/Home';
 import Footer from './components/footer/Footer';
+import { faScaleBalanced } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+
+
+
+library.add(faScaleBalanced);
 
 
 function App() {

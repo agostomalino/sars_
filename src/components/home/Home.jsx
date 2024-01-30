@@ -4,6 +4,9 @@ import Section from '../section/Section';
 import Contact from '../contact/Contact';
 import Card from '../card/Card';
 import CallToAction from '../callTo/CallToAction';
+import { faHandshake, faScaleBalanced, faWallet } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const Home = () => {
     return (<>
@@ -24,14 +27,17 @@ const Home = () => {
                 <Card 
                     title="Gestión Integral de Reclamos" 
                     description="Nos encargamos de gestionar el reclamo del automotor siniestrado en casos donde la unidad asegurada no es responsable (culpa grave) directo del siniestro, desde la recepción hasta la resolución."
-                />
+                    icon={faHandshake}
+                    />
                 <Card 
                     title="Asistencia Legal Especializada" 
                     description="Contamos con un estudio jurídico con amplia experiencia en la materia para mediar y resolver los reclamos administrativos y judiciales en favor del asegurado."
-                />
+                    icon={faScaleBalanced}
+                    />
                 <Card 
                     title="Beneficio Financiero Compartido" 
                     description="Compartimos un 20% de las ganancias generadas por la resolución exitosa del reclamo con el PAS (Productor Asesor de Seguros)."
+                    icon={faWallet}
                 />
             </div>
         </div>
@@ -57,4 +63,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;

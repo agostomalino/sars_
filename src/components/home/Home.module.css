@@ -54,16 +54,17 @@
     background:none;
     display: block;
     padding: 10px 15px;
-    border: 2px var(--color-claro) solid;
+    border: 2px var(--color-azul) solid;
     cursor: pointer;
     transition: background-color 0.8s ease, color 0.8s ease;
-    background-color: var(--color-claro);
-    color: var(--color-primary);
+    background-color: var(--color-azul);
+    color: var(--color-claro);
 }
 .home_button:hover{
-    color: var(--color-primary);
-    border: 2px var(--color-primary) solid;
+    color: var(--color-azul);
+    border: 2px var(--color-azul) solid;
     background: none;
+    font-weight: 600;
 }
 /*  SECTIONS */
 .containerSections{

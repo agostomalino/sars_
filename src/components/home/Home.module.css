@@ -88,3 +88,7 @@
 .container_servicios{
     padding: 60px 0px;
 }
+.container_cta{
+    display: flex;
+    justify-content: center;
+}

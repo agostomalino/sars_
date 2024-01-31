@@ -15,7 +15,7 @@ const Home = () => {
                 <div className={classes.h_left}>
                     <h1 className={classes.home_title}>Servicio Asociado de <span className={classes.color_blue}>Cobro de Siniestros</span></h1>
                     <p className={classes.home_subtitle}>Ingresá a la plataforma de reclamos para cargar tu caso.</p>
-                    <button className={classes.home_button}>Iniciar Sesión</button>
+                    <button className={classes.home_button}>Iniciar sesión</button>
                 </div>
             </div>
         </section>
@@ -55,7 +55,9 @@ const Home = () => {
         </div>
 
         <div className={classes.containerSections}>
-            <CallToAction/>
+            <div className={classes.container_cta}>
+                <CallToAction/>
+            </div>
 
             <Contact />
         </div>

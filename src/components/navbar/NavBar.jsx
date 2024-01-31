@@ -9,7 +9,7 @@ const NavBar = () => {
                 <Link to="/" className={classes.logo}><h1 className='logo-h'>SACS</h1></Link>
             </div>
             <div className={classes.headerRight}>
-                <Link to="/" className={classes.btn}>Iniciar Sesion</Link>
+                <Link to="/log-in" className={classes.btn}>Iniciar sesión</Link>
             </div>
         </header>
     )

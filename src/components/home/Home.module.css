@@ -67,6 +67,11 @@
     font-weight: 600;
 }
 /*  SECTIONS */
+.sections{
+    width: 100%;
+    background-color: var(--color-transparent);
+    padding: 40px var(--padding)
+}
 .containerSections{
     padding: 40px var(--padding);
     padding-bottom: 0px;
@@ -81,5 +86,5 @@
     font-family: var(--second-font-family);
 }
 .container_servicios{
-    padding-top: 80px;
+    padding: 60px 0px;
 }

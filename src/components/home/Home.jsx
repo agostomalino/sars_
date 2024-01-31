@@ -40,6 +40,7 @@ const Home = () => {
                 />
             </div>
         </div>
+        </div>
         <div className={classes.sections}>
             <Section 
                 left={true} 
@@ -53,9 +54,10 @@ const Home = () => {
             />
         </div>
 
-        <CallToAction/>
+        <div className={classes.containerSections}>
+            <CallToAction/>
 
-        <Contact />
+            <Contact />
         </div>
 
     </>

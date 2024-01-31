@@ -6,7 +6,9 @@
     align-items: center;
     margin-top: 20px;
     background-color: var(--color-transparent);
-    border-radius: 50px;
+    /* border-radius: 50px; */
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .containerLeft {

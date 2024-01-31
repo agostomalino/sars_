@@ -19,6 +19,7 @@
 }
 
 .btn{
+    text-align: center;
     color: var(--color-claro);
     border-radius: 50px;
     background-color: var(--color-azul);

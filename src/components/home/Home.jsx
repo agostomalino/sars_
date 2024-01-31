@@ -20,7 +20,6 @@ const Home = () => {
             </div>
         </section>
         <div className={classes.containerSections}>
-
         <div className={classes.container_servicios}>
             <h2 className={classes.cards_title}>Servicios</h2>
             <div className={classes.cards}>

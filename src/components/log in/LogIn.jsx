@@ -1,9 +1,10 @@
 import React,{useState} from 'react';
 import classes from './LogIn.module.css';
+import { Link } from 'react-router-dom';
 
 const LogIn = () => {
 
-        // Estados para almacenar el nombre de usuario y la contraseña
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,28 +20,35 @@ const LogIn = () => {
     
     return (
             <div className={classes.container}>
-                <h2>Iniciar Sesión</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                    Usuario:
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                    </label>
-                    <br />
-                    <label>
-                    Contraseña:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    </label>
-                    <br />
-                    <button type="submit">Iniciar sesión</button>
-                </form>
+                <div className={classes.box}>
+                    <h2 className={classes.title}>Iniciar Sesión.</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <div className={classes.boxData}>
+                                <label>Usuario:</label>
+                                <input
+                                    type="text"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                />
+                            </div>
+                            <br />
+                            <div className={classes.boxData}>
+                                <label>Contraseña:</label>
+                                <input
+                                    type="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </div>
+                        </div>
+                        <br />
+                        <div>
+                            <Link to="/" className={classes.recuperar}>¿Olvidaste tu contraseña?</Link>
+                            <button type="submit" className={classes.btn}>Iniciar sesión</button>
+                        </div>
+                    </form>
+                </div>
             </div>
     )
 }

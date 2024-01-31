@@ -9,7 +9,7 @@
     --color-gray: #777777;
     --color-azul: #0941a0;
     --color-transparent: rgba(223, 222, 222, 0.5);
-
+    --box-shadow:0 0 10px rgba(0, 0, 0, 0.2);
 
     /* FONTS */
     --font-family: 'Open Sans', sans-serif;

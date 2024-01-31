@@ -1,28 +1,33 @@
 .cta{
     height: 20rem;
-    margin-top: 5rem;
-    padding: 40px 0px;
+    /* margin-top: 5rem; */
+    padding: 80px 40px 40px 40px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    background-color: var(--color-azul);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 .title{
     font-size: 40px;
-    color: var(--color-azul);
+    color: var(--color-claro);
+}
+.p{
+    color: var(--color-claro);
 }
 
-
 .line{
-    border-bottom: 2px solid var(--color-azul);
+    border-bottom: 2px solid var(--color-claro);
     height: 20px;
     width: 300px;
 }
 
 .btn{
     text-align: center;
-    color: var(--color-claro);
+    color: var(--color-azul);
     border-radius: 50px;
-    background-color: var(--color-azul);
+    background-color: var(--color-claro);
     display: block;
     padding: 20px 30px;
     cursor:pointer;
@@ -32,7 +37,7 @@
 }
 
 .btn:hover{
-    color: var(--color-azul);
+    color: var(--color-claro);
     background: none;
     border: 2px solid;
 }

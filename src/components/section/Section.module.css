@@ -24,6 +24,13 @@
     color: var(--color-azul);
     font-family: var(--second-font-family);
     font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.line{
+    border-bottom: 2px solid var(--color-azul);
+    height: 2px;
+    width: 30%;
     margin-bottom: 40px;
 }
 
@@ -35,3 +42,4 @@
 .img {
     width: 100%; 
 }  
+

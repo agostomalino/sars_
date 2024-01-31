@@ -10,6 +10,7 @@ const Section = ({ left, title, description }) => {
         <section className={classes.section} style={sectionStyle}>
         <div className={classes.containerLeft}>
             <h2 className={classes.titulo}>{title}</h2>
+            <div className={classes.line}></div>
             <p className={classes.description}>
                 {description}
             </p>

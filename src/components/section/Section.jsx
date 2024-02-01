@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from './Section.module.css';
-import reunionImage from '../../assets/reunion.jpeg';
 
-const Section = ({ left, title, description }) => {
+
+const Section = ({ left, title, description,imagen }) => {
     const flexDirection = left ? 'row' : 'row-reverse';
     const sectionStyle = { flexDirection: flexDirection };
 
@@ -16,7 +16,7 @@ const Section = ({ left, title, description }) => {
             </p>
         </div>
         <div className={classes.containerRight}>
-            <img src={reunionImage} alt="reunion" className={classes.img} />
+            <img src={imagen} alt="reunion" className={classes.img} />
         </div>
         </section>
     );

@@ -7,9 +7,21 @@ import CallToAction from '../callTo/CallToAction';
 import { faHandshake, faScaleBalanced, faWallet } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import sarsImage from '../../assets/sars.jpeg';
+import reunionImage from '../../assets/reunion.jpeg';
+import pcsImage from '../../assets/pcs.jpeg';
+
 
 
 const Home = () => {
+
+    const imgRutes = [
+        sarsImage,
+        reunionImage,
+        pcsImage
+    ]
+
+
     return (<>
         <section className={classes.home}>
             <div className={`${classes.home_content} container`}>
@@ -47,11 +59,13 @@ const Home = () => {
                 left={true} 
                 title="Alivio de Carga Laboral" 
                 description="Liberamos a los productores de la tarea de manejar reclamos, permitiéndoles enfocarse en sus funciones principales."
+                imagen={imgRutes[2]}
             />
             <Section 
                 left={false} 
                 title="Generación de Ingresos Adicionales" 
                 description="Obtienen beneficios económicos cuando se resuelven los reclamos, sin incurrir en costos adicionales"
+                imagen={imgRutes[0]}
             />
         </div>
 

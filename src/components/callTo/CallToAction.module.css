@@ -29,6 +29,7 @@
     text-align: center;
     color: var(--color-azul);
     border-radius: 50px;
+    border: 2px solid;
     background-color: var(--color-claro);
     display: block;
     padding: 20px 30px;

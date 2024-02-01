@@ -49,6 +49,7 @@
 .home_button{
     margin-top: 20px;
     font-size: 20px;
+    width: 189px;
     font-family: var(--second-font-family);
     background:none;
     display: block;
@@ -59,12 +60,11 @@
     transition: background-color 0.8s ease, color 0.8s ease;
     background-color: var(--color-azul);
     color: var(--color-claro);
+    font-weight: 600;
 }
 .home_button:hover{
     color: var(--color-azul);
-    border: 2px var(--color-azul) solid;
     background: none;
-    font-weight: 600;
 }
 /*  SECTIONS */
 .sections{

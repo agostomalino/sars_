@@ -25,11 +25,11 @@
     font-family: var(--second-font-family);
     font-size: 16px;
     border-radius: 50px;
+    border: 2px solid;
     transition: background-color 0.8s ease, color 0.8s ease;
 }
 
 .btn:hover{
     color: var(--color-azul);
     background: none;
-    border: 2px solid;
 }

@@ -5,6 +5,7 @@ import Contact from '../contact/Contact';
 import Card from '../card/Card';
 import CallToAction from '../callTo/CallToAction';
 import { faHandshake, faScaleBalanced, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,7 +16,7 @@ const Home = () => {
                 <div className={classes.h_left}>
                     <h1 className={classes.home_title}>Servicio Asociado de <span className={classes.color_blue}>Cobro de Siniestros</span></h1>
                     <p className={classes.home_subtitle}>Ingresá a la plataforma de reclamos para cargar tu caso.</p>
-                    <button className={classes.home_button}>Iniciar sesión</button>
+                    <Link to='/log-in'className={classes.home_button}>Iniciar sesión</Link>
                 </div>
             </div>
         </section>

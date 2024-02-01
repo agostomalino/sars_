@@ -12,7 +12,7 @@ const CallToAction = () => {
                     <li><p className={classes.p}>Creá y administrá los reclamos de siniestros viales.</p></li>
                 </ul>
             </div>
-            <Link to="/" className={classes.btn}>Iniciar sesión</Link>
+            <Link to="/log-in" className={classes.btn}>Iniciar sesión</Link>
         </article>
 
     )

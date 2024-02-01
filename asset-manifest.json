@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sars_/static/css/main.399cfce9.css",
-    "main.js": "/sars_/static/js/main.3a8957e1.js",
+    "main.css": "/sars_/static/css/main.1fe8d7e0.css",
+    "main.js": "/sars_/static/js/main.a6e3c8f0.js",
     "static/media/reunion.jpeg": "/sars_/static/media/reunion.03e6afe6638a5f3076ac.jpeg",
     "static/media/city azul.jpg": "/sars_/static/media/city azul.6759c7b9fa6af7fad690.jpg",
     "index.html": "/sars_/index.html",
-    "main.399cfce9.css.map": "/sars_/static/css/main.399cfce9.css.map",
-    "main.3a8957e1.js.map": "/sars_/static/js/main.3a8957e1.js.map"
+    "main.1fe8d7e0.css.map": "/sars_/static/css/main.1fe8d7e0.css.map",
+    "main.a6e3c8f0.js.map": "/sars_/static/js/main.a6e3c8f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.399cfce9.css",
-    "static/js/main.3a8957e1.js"
+    "static/css/main.1fe8d7e0.css",
+    "static/js/main.a6e3c8f0.js"
   ]
 }

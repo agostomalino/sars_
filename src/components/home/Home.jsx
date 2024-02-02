@@ -4,7 +4,7 @@ import Section from '../section/Section';
 import Contact from '../contact/Contact';
 import Card from '../card/Card';
 import CallToAction from '../callTo/CallToAction';
-import { faHandshake, faScaleBalanced, faWallet } from '@fortawesome/free-solid-svg-icons';
+import { faHandshake, faScaleBalanced, faWallet, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 import sarsImage from '../../assets/sars.jpeg';
@@ -74,7 +74,9 @@ const Home = () => {
                 <CallToAction/>
             </div>
 
-            <Contact />
+            <Contact 
+                icon={faPhone}
+            />
         </div>
 
     </>

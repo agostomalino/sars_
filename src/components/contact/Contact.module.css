@@ -18,8 +18,14 @@
     color: var(--color-azul);
 }
 
+.container_contacto ul li{
+    display: flex;
+    align-items: center;
+
+}
+
 .list_text{
     font-size: 16px;
     line-height: 30px;
-    margin-left: 30px;
+    margin-left: 20px;
 }

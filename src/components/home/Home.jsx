@@ -5,6 +5,7 @@ import Contact from '../contact/Contact';
 import Card from '../card/Card';
 import CallToAction from '../callTo/CallToAction';
 import { faHandshake, faScaleBalanced, faWallet, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
 import sarsImage from '../../assets/sars.jpeg';
@@ -75,7 +76,7 @@ const Home = () => {
             </div>
 
             <Contact 
-                icon={faPhone}
+                icon={faWhatsapp}
             />
         </div>
 

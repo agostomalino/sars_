@@ -51,7 +51,6 @@ const LogIn = () => {
                     </div>
                     <br />
                     <div>
-
                         <Link to="#" className={classes.recuperar} onClick={handleForgotPasswordClick}>
                             ¿Olvidaste tu contraseña?
                         </Link>

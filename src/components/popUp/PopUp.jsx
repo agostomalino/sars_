@@ -14,7 +14,8 @@ const Popup = ({ handleClose, handleResetPassword, show }) => {
             {show && <div className={classes.backdrop}></div>} {/* Fondo oscuro */}
             <div className={show ? classes.displayBlock : classes.displayNone}>
                 <section className={classes.modalMain}>
-                    <h2 className={classes.title}>¿Olvidaste tu contraseña?</h2>
+                    <h2 className={classes.title}>Recuperar tus datos</h2>
+                    <p className={classes.data}>Recibirás un correo con tu nueva contraseña.</p>
                     <label>Email:</label>
                     <input
                         type="email"

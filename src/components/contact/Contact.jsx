@@ -17,10 +17,7 @@ const Contact = (props) => {
                 <li className='list'><FontAwesomeIcon icon={faEnvelope} /><p className={classes.list_text}>juan@mmasesores.com.ar</p></li>
                 <li className='list'><FontAwesomeIcon icon={faLocationDot} /><p className={classes.list_text}>Córdoba, Argentina</p></li>
             </ul>
-            {/* <ul>
-                <li><p className={classes.list_text}>Whatsapp</p></li>
-                <li><p className={classes.list_text}>asesorsars@sars.com</p></li>
-            </ul> */}
+
         </section>
     )
 }

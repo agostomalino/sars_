@@ -57,7 +57,7 @@ label{
 
 .btn{
     width: 100%;
-    margin: 40px auto;
+    margin: 20px auto;
     text-align: center;
     background-color: var(--color-azul);
     color: var(--color-claro);
@@ -78,7 +78,13 @@ label{
 }
 
 .recuperar{
-    color: var(--color-primary);
+    color: var(--color-azul);
     font-size: 14px;
     margin-top: 60px;
+}
+.sin_acceso{
+    font-size: 12px;
+}
+.span{
+    font-weight: 600;
 }

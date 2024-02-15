@@ -51,12 +51,14 @@ const LogIn = () => {
                     </div>
                     <br />
                     <div>
+                        <p className={classes.sin_acceso}>Si no contás con acceso contactate con: <span className={classes.span}>juan@mmasesores.com.ar</span></p>
                         <Link to="#" className={classes.recuperar} onClick={handleForgotPasswordClick}>
                             ¿Olvidaste tu contraseña?
                         </Link>
-                        <button type="submit" className={classes.btn}>
+                        {/* <button type="submit" className={classes.btn}>
                             Iniciar sesión
-                        </button>
+                        </button> */}
+                        <Link to='/listado' className={classes.btn}>listado</Link>
                     </div>
                 </form>
             </div>

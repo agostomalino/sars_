@@ -6,6 +6,7 @@ import LogIn  from './components/log in/LogIn';
 import Footer from './components/footer/Footer';
 import { faScaleBalanced } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 
@@ -21,6 +22,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/log-in" element={<LogIn />}/>
+      <Route path='/listado' element={<ItemListContainer/>}/>
     </Routes>
     <Footer />
     </BrowserRouter>

@@ -3,7 +3,7 @@ import classes from './ItemList.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faEdit, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-const ItemList = ({ items, onItemClick }) => {
+const ItemList = ({ items, onItemClick, username }) => {
     const [showMessagePopup, setShowMessagePopup] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
     const [comment, setComment] = useState('');
@@ -26,7 +26,7 @@ const ItemList = ({ items, onItemClick }) => {
     const handleCommentSubmit = (event) => {
         event.preventDefault();
         if (comment.trim() !== '') {
-            const newComment = { text: comment, date: new Date().toISOString() };
+            const newComment = { text: comment, date: new Date().toLocaleString(), user: username };
             setComments([...comments, newComment]);
             setComment('');
         }
@@ -40,8 +40,8 @@ const ItemList = ({ items, onItemClick }) => {
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Fecha</th>
-                        <th>Patente</th>
-                        <th>Compañía</th>
+                        <th>Patente del Reclamado</th>
+                        <th>Compañía a reclamar</th>
                         <th>Monto</th>
                         <th>Estado</th>
                         <th>Descargar</th>
@@ -78,27 +78,27 @@ const ItemList = ({ items, onItemClick }) => {
                     <div className={classes.transparentBackdrop}></div>
                     <div className={`${classes.messagePopup} ${classes.popupStyles}`}>
                         <div className={classes.popUpHeader}>
-                            <h2>{selectedItem.name}</h2>
+                            <h2>Reclamo Número: {selectedItem.id}</h2>
                             <div className={classes.dataHeader}>
+                                <p><span>Nombre:</span> {selectedItem.name}</p>
                                 <p><span>Patente:</span> {selectedItem.patente}</p>
-                                <p><span>ID:</span> {selectedItem.id}</p>
-                                <p><span>Compañía:</span> {selectedItem.compañia}</p>
                             </div>
                         </div>
 
                         <div>
-                            <h3>Comentarios:</h3>
+                            <h3 className={classes.comentTitle}>Comentarios:</h3>
                             {comments.length > 0 ? (
                                 <ul>
                                     {comments.map((comment, index) => (
                                         <li key={index} className={classes.coment}>
+                                            <p><strong>{comment.user}:</strong> {comment.text}</p>
                                             <p>{comment.text}</p>
                                             <p>{comment.date}</p>
                                         </li>
                                     ))}
                                 </ul>
                             ) : (
-                                <p>No hay comentarios aún.</p>
+                                <p className={classes.noHay}>No hay comentarios aún.</p>
                             )}
                         </div>
                         <form onSubmit={handleCommentSubmit}>
@@ -108,7 +108,7 @@ const ItemList = ({ items, onItemClick }) => {
                                 onChange={handleCommentChange}
                                 className={classes.commentTextArea}
                             />
-                            <button type="submit">Comentar</button>
+                            <button type="submit" className={classes.btnComent}>Comentar</button>
                         </form>
                         <div className={classes.popUpFooter}>
                             <button onClick={handleCloseMessagePopup} className={classes.cerrar}>Cerrar</button>

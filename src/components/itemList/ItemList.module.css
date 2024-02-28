@@ -62,17 +62,23 @@ td{
 }
 
 .messagePopup button {
-    background-color: #007bff;
-    color: white;
-    border: none;
+    color: var(--color-claro);
+    background-color: var(--color-azul);
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
+    /* padding: 15px 25px; */
+    cursor: pointer;
+    font-family: var(--second-font-family);
+    border-radius: 50px;
+    border: 2px solid;
+    transition: background-color 0.8s ease, color 0.8s ease;
 }
 
 .messagePopup button:hover {
-    background-color: #0056b3;
+    color: var(--color-azul);
+    background: none;
 }
 
 .messagePopup ul {
@@ -127,7 +133,18 @@ td{
     height: 40px; 
     resize: vertical; 
 }
+.comentTitle{
+    font-size: 15px;
+}
 
+.noHay{
+    margin-bottom: 15px;
+}
+
+.btnComent{
+
+    font-size: 16px;
+}
 /* Estilos para el fondo transparente */
 .transparentBackdrop {
     position: fixed;

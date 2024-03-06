@@ -3,7 +3,7 @@ import ItemList from '../itemList/ItemList';
 import ItemDetail from '../itemDetail/ItemDetail';
 import classes from './ItemListContainer.module.css';
 
-const ItemListContainer = () => {
+const ItemListContainer = ({username}) => {
     
     const [selectedItem, setSelectedItem] = useState(null);
     const items = [
@@ -12,7 +12,6 @@ const ItemListContainer = () => {
         { id: 3, name: 'Agostina', fecha: '02/04/2020', patente: 'abc 456',compañia: 'sancor', monto:2000 , estado: 'pendiente'},
         { id: 3, name: 'Pepito', fecha: '03/04/2020', patente: 'abc 789',compañia: 'sancor', monto:4000 , estado: 'completo'}
     ];
-    const username = 'NombreDeUsuario';
 
     const handleItemClick = item => {
         setSelectedItem(item);
@@ -25,7 +24,7 @@ const ItemListContainer = () => {
             {selectedItem ? (
                 <ItemDetail item={selectedItem} />
             ) : (
-                <ItemList items={items} onItemClick={handleItemClick} user={username}/>
+                <ItemList items={items} onItemClick={handleItemClick} username={username}/>
             )}
         </div>
     );

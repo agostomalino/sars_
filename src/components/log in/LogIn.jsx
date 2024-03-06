@@ -58,7 +58,7 @@ const LogIn = () => {
                         {/* <button type="submit" className={classes.btn}>
                             Iniciar sesión
                         </button> */}
-                        <Link to='/listado' className={classes.btn}>listado</Link>
+                        <Link to='/listado' className={classes.btn}>Iniciar sesión</Link>
                     </div>
                 </form>
             </div>

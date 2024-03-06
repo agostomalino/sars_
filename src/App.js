@@ -15,6 +15,11 @@ library.add(faScaleBalanced);
 
 
 function App() {
+  const user = { 
+    name:'Juan Cruz Masjoan',
+    id: 1234,
+    mail: "juan@gmail.com"
+  }
   return (
     <BrowserRouter  basename="/sars_">
     <NavBar />
@@ -22,7 +27,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/log-in" element={<LogIn />}/>
-      <Route path='/listado' element={<ItemListContainer/>}/>
+      <Route path='/listado' element={<ItemListContainer username={user.name}/>}/>
     </Routes>
     <Footer />
     </BrowserRouter>

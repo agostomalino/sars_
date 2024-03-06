@@ -92,7 +92,6 @@ const ItemList = ({ items, onItemClick, username }) => {
                                     {comments.map((comment, index) => (
                                         <li key={index} className={classes.coment}>
                                             <p><strong>{comment.user}:</strong> {comment.text}</p>
-                                            <p>{comment.text}</p>
                                             <p>{comment.date}</p>
                                         </li>
                                     ))}
@@ -108,7 +107,7 @@ const ItemList = ({ items, onItemClick, username }) => {
                                 onChange={handleCommentChange}
                                 className={classes.commentTextArea}
                             />
-                            <button type="submit" className={classes.btnComent}>Comentar</button>
+                            <button type="submit" className={classes.btnComent}>Enviar</button>
                         </form>
                         <div className={classes.popUpFooter}>
                             <button onClick={handleCloseMessagePopup} className={classes.cerrar}>Cerrar</button>

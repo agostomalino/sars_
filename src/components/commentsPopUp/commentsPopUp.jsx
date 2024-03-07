@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import classes from './commentsPopUp.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) => {
     const [currentComment, setCurrentComment] = useState('');
@@ -27,7 +29,14 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) =>
             <div className={classes.transparentBackdrop}></div>
             <div className={`${classes.messagePopup} ${classes.popupStyles}`}>
                 <div className={classes.popUpHeader}>
-                    <h2>Comentarios reclamo #{selectedComplaint.id}</h2>
+                    <div className={classes.headerMain}>
+                        <h2 className={classes.headerTitle}>Comentarios reclamo #{selectedComplaint.id}</h2>
+                        <button  
+                            className={classes.cerrar}
+                            onClick={handleCloseCommentsPopup}>
+                                <FontAwesomeIcon icon={faTimes} size="2x"/>
+                        </button>
+                    </div>
                     <div className={classes.dataHeader}>
                         <p><span>Nombre:</span> {selectedComplaint.name}</p>
                         <p><span>Patente:</span> {selectedComplaint.plate}</p>
@@ -40,8 +49,9 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) =>
                         <ul>
                             {comments.map((comment, index) => (
                                 <li key={index} className={classes.coment}>
-                                    <p><strong>{comment.user}:</strong> {comment.text}</p>
-                                    <p>{comment.date}</p>
+                                    <p><strong className={classes.username}>{comment.user}:</strong></p>
+                                    <p>{comment.text}</p>
+                                    <p className={classes.date}>{comment.date}</p>
                                 </li>
                             ))}
                         </ul>
@@ -58,9 +68,7 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) =>
                     />
                     <button type="submit" className={classes.btnComment}>Enviar</button>
                 </form>
-                <div className={classes.popUpFooter}>
-                    <button onClick={handleCloseCommentsPopup}>Cerrar</button>
-                </div>
+                {/*  */}
             </div>
 
         </div>

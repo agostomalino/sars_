@@ -46,7 +46,7 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) =>
 
                 <div>
                     {comments.length > 0 ? (
-                        <ul>
+                        <ul className={classes.listaComments}>
                             {comments.map((comment, index) => (
                                 <li key={index} className={classes.coment}>
                                     <p><strong className={classes.username}>{comment.user}:</strong></p>

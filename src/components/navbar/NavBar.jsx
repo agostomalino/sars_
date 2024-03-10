@@ -18,7 +18,7 @@ const NavBar = () => {
                 break;
             case '/listado':
                 newText = 'Nuevo Reclamo';
-                setRoute('/formulario');
+                setRoute('/sars_/formulario');
                 break;
             default:
                 newText = 'Inicio';

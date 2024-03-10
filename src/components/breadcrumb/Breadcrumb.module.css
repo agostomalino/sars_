@@ -1,0 +1,33 @@
+.breadcrumb {
+    padding: 10px 100px;
+    margin: 10px 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--color-azul);
+}
+
+.breadcrumbLink{
+    color: var(--color-primary);
+}
+
+.breadcrumbItem {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.breadcrumbItem:last-child {
+    font-weight: bold;
+}
+
+.breadcrumbItem:last-child a {
+    pointer-events: none;
+    cursor: default;
+}
+
+.breadcrumbItem:not(:last-child)::after {
+    content: '>';
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #aaa;
+}

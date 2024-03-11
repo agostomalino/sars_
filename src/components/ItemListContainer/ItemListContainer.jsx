@@ -3,8 +3,8 @@ import ItemList from '../itemList/ItemList';
 import ItemDetail from '../itemDetail/ItemDetail';
 import classes from './ItemListContainer.module.css';
 
-const ItemListContainer = ({username}) => {
-    
+const ItemListContainer = () => {
+    const username = localStorage.getItem('username');
     const [selectedItem, setSelectedItem] = useState(null);
     const items = [
         { id: 1, name: 'Juan Cruz', date: '02/04/2020', plate:'vot 235' ,company: 'san cristobal', amount:5000, state: 'activo', 
@@ -23,6 +23,7 @@ const ItemListContainer = ({username}) => {
         <div className={classes.section}>
             
             <h4>Listado de Reclamos</h4>
+            <h5>User: {username}</h5>
             {selectedItem ? (
                 <ItemDetail item={selectedItem} />
             ) : (

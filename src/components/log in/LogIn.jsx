@@ -1,18 +1,34 @@
 import React, { useState } from 'react';
 import classes from './LogIn.module.css';
-import Popup from '../popUp/PopUp';  
+import Popup from '../popUp/PopUp';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const [username, setUsername] = useState('UsuarioDePrueba');
+    const [password, setPassword] = useState('12341234');
     const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Usuario:', username, 'Contraseña:', password);
-        setUsername('');
-        setPassword('');
+        if (!username || !password) {
+            console.log("Username or password is empty");
+            return;
+        }
+        axios.post('http://34.176.123.248/api/auth/local', {
+            identifier: username,
+            password: password
+        }).then(response => {
+            localStorage.setItem('username', `${response.data.user.name} ${response.data.user.lastname}`);
+            localStorage.setItem('token', response.data.jwt);
+            navigate('/listado');
+        })
+            .catch(error => {
+                console.log('An error occurred:', error.response);
+            });
     };
 
     const handleForgotPasswordClick = () => {
@@ -55,10 +71,9 @@ const LogIn = () => {
                         <Link to="#" className={classes.recuperar} onClick={handleForgotPasswordClick}>
                             ¿Olvidaste tu contraseña?
                         </Link>
-                        {/* <button type="submit" className={classes.btn}>
+                        <button type="submit" className={classes.btn}>
                             Iniciar sesión
-                        </button> */}
-                        <Link to='/listado' className={classes.btn}>Iniciar sesión</Link>
+                        </button>
                     </div>
                 </form>
             </div>

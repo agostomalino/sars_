@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classes from './LogIn.module.css';
-import Popup from '../popUp/PopUp';
+import ResetPasswordPopUp from '../resetPasswordPopUp/ResetPasswordPopUp';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -44,7 +44,7 @@ const LogIn = () => {
     return (
         <div className={classes.container}>
             <div className={classes.box}>
-                <h2 className={classes.title}>Iniciar Sesión.</h2>
+                <h2 className={classes.title}>Iniciar Sesión</h2>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <div className={classes.boxData}>
@@ -79,7 +79,7 @@ const LogIn = () => {
             </div>
 
             {showModal && (
-                <Popup handleClose={handleCloseModal} show={showModal}></Popup>
+                <ResetPasswordPopUp handleClose={handleCloseModal} show={showModal}></ResetPasswordPopUp>
             )}
         </div>
     );

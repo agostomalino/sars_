@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/navbar/NavBar';
-import Home  from './components/home/Home';
+import Home  from './components/mainPage/home/Home';
 import LogIn  from './components/log in/LogIn';
 import Footer from './components/footer/Footer';
 import { faScaleBalanced } from '@fortawesome/free-solid-svg-icons';
@@ -9,11 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Formulario from './components/form/Formulario';
 
-
-
-
 library.add(faScaleBalanced);
-
 
 function App() {
   const user = { 

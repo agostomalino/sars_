@@ -1,0 +1,31 @@
+.container_contacto{
+    min-height: 250px;
+    margin-top: 80px;
+    padding: 130px 0px;
+    display: flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap: 40px;
+    border-top: 2px solid var(--color-tertiary);
+}
+
+.title{
+    font-size: 40px;
+    word-wrap: break-word;
+    font-family: var(--second-font-family);
+    margin-right: 60px;
+    width: 30%;
+    color: var(--color-azul);
+}
+
+.container_contacto ul li{
+    display: flex;
+    align-items: center;
+
+}
+
+.list_text{
+    font-size: 16px;
+    line-height: 30px;
+    margin-left: 20px;
+}

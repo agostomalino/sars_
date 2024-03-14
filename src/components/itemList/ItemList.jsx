@@ -9,7 +9,7 @@ const ItemList = ({ items, onItemClick, username }) => {
     const [selectedItem, setSelectedItem] = useState(null);
 
     const handleMessageClick = (event, item) => {
-        event.stopPropagation(); 
+        event.stopPropagation();
         setSelectedItem(item);
         setShowCommentsPopUp(true);
     };
@@ -17,7 +17,7 @@ const ItemList = ({ items, onItemClick, username }) => {
     return (
         <div className={classes.tableContainer}>
             <table>
-                <thead className={classes.encabezado}>
+                <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
@@ -26,9 +26,9 @@ const ItemList = ({ items, onItemClick, username }) => {
                         <th>Compañía a reclamar</th>
                         <th>Monto</th>
                         <th>Estado</th>
-                        <th>Descargar</th>
-                        <th>Modificar</th>
-                        <th>Comentarios</th>
+                        <th className={classes.centered}>Descargar</th>
+                        <th className={classes.centered}>Modificar</th>
+                        <th className={classes.centered}>Comentarios</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,9 +41,17 @@ const ItemList = ({ items, onItemClick, username }) => {
                             <td>{item.company}</td>
                             <td>{item.amount}</td>
                             <td>{item.state}</td>
-                            <td><FontAwesomeIcon icon={faDownload} className="action-icon" /></td>
-                            <td><FontAwesomeIcon icon={faEdit} className="action-icon" /></td>
-                            <td>
+                            <td className={classes.icon}>
+                                <FontAwesomeIcon
+                                    icon={faDownload}
+                                    className="action-icon" />
+                            </td>
+                            <td className={classes.icon}>
+                                <FontAwesomeIcon
+                                    icon={faEdit}
+                                    className="action-icon" />
+                            </td>
+                            <td className={classes.icon}>
                                 <FontAwesomeIcon
                                     icon={faEnvelope}
                                     className="action-icon"
@@ -55,7 +63,7 @@ const ItemList = ({ items, onItemClick, username }) => {
                 </tbody>
             </table>
 
-            {showMessagePopup && ( <CommentsPopUp selectedComplaint={selectedItem} setShowCommentsPopUp={setShowCommentsPopUp} username={username}/>
+            {showMessagePopup && (<CommentsPopUp selectedComplaint={selectedItem} setShowCommentsPopUp={setShowCommentsPopUp} username={username} />
             )}
         </div>
     );

@@ -1,20 +1,19 @@
-
 .tableContainer table {
     margin: 20px 0;
     width: 100%;
-    border-collapse:collapse;
+    border-collapse: collapse;
     /* background-color: var(--color-transparent); */
 }
 
-.tableContainer th, .table-container td {
+.tableContainer th{
     border-bottom: 1px solid var(--color-azul);
     padding: 8px;
     text-align: left;
+    background-color: #f2f2f2;
 }
 
-.tableContainer th {
-    background-color: #f2f2f2;
-
+.centered {
+    text-align: center !important;
 }
 
 .tableContainer tr:nth-child(even) {
@@ -25,11 +24,15 @@
     background-color: #b7b3ffb1;
 }
 
-td{
+td {
     padding: 5px 10px;
 }
 
 .checkboxContainer input[type="checkbox"] {
-    width: 16px; 
-    height: 16px; 
+    width: 16px;
+    height: 16px;
+}
+
+.icon {
+    text-align: center;
 }

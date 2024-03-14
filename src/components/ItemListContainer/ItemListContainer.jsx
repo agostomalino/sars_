@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemList from '../itemList/ItemList';
 import ItemDetail from '../itemDetail/ItemDetail';
 import classes from './ItemListContainer.module.css';
@@ -6,14 +6,36 @@ import classes from './ItemListContainer.module.css';
 const ItemListContainer = () => {
     const username = localStorage.getItem('username');
     const [selectedItem, setSelectedItem] = useState(null);
-    const items = [
-        { id: 1, name: 'Juan Cruz', date: '02/04/2020', plate:'vot 235' ,company: 'san cristobal', amount:5000, state: 'activo', 
-            comments: [{ text: 'El reclamo se encuentra en proceso', date: '02/04/2020', user: 'Juan Cruz Masjoan'}]
-        },
-        { id: 2, name: 'Mateo', date: '02/04/2020', plate: 'npm 123' ,company: 'la caja', amount:24000, state: 'completo'},
-        { id: 3, name: 'Agostina', date: '02/04/2020', plate: 'abc 456',company: 'sancor', amount:2000 , state: 'pendiente'},
-        { id: 3, name: 'Pepito', date: '03/04/2020', plate: 'abc 789',company: 'sancor', amount:4000 , state: 'completo'}
-    ];
+    const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchItems = async () => {
+            try {
+                const token = localStorage.getItem('token');
+                const response = await fetch('http://34.176.123.248/api/claims?populate=claimers,claimants,claimantVehicle,claimerVehicle,comments', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+
+                const processedClaims = processClaims(data);
+                console.log('ya procesados', processClaims(data))
+
+                setItems(processedClaims);
+                setIsLoading(false);
+            } catch (error) {
+                console.error('Error fetching items:', error);
+            }
+        };
+
+        fetchItems();
+    }, []);
 
     const handleItemClick = item => {
         setSelectedItem(item);
@@ -21,16 +43,39 @@ const ItemListContainer = () => {
 
     return (
         <div className={classes.section}>
-            
             <h4>Listado de Reclamos</h4>
-            <h5>User: {username}</h5>
-            {selectedItem ? (
-                <ItemDetail item={selectedItem} />
+            {isLoading ? (
+                <p>Loading...</p>
             ) : (
-                <ItemList items={items} onItemClick={handleItemClick} username={username}/>
+                <>
+                    <h5>User: {username}</h5>
+                    {selectedItem ? (
+                        <ItemDetail item={selectedItem} />
+                    ) : (
+                        <ItemList items={items} onItemClick={handleItemClick} username={username} />
+                    )}
+                </>
             )}
         </div>
     );
 };
 
 export default ItemListContainer;
+
+// Función para procesar los reclamos y dejarlos en un formato más manejable
+const processClaims = (claims) => {
+    return claims.data.map(item => ({
+        ...item.attributes,
+        id: item.id,
+        claimers: item.attributes.claimers.data.map(claimer => ({
+            id: claimer.id,
+            ...claimer.attributes
+        }))
+        ,
+        claimants: item.attributes.claimants.data.map(claimer => ({
+            id: claimer.id,
+            ...claimer.attributes
+        }))
+        ,
+    }));
+};

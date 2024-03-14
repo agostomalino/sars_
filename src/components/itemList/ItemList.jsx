@@ -20,38 +20,38 @@ const ItemList = ({ items, onItemClick, username }) => {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
+                        <th>Nombre del reclamante</th>
                         <th>Fecha</th>
-                        <th>Patente del Reclamado</th>
+                        <th>Patente del reclamado</th>
                         <th>Compañía a reclamar</th>
                         <th>Monto</th>
                         <th>Estado</th>
-                        <th className={classes.centered}>Descargar</th>
-                        <th className={classes.centered}>Modificar</th>
-                        <th className={classes.centered}>Comentarios</th>
+                        <th>Descargar</th>
+                        <th>Modificar</th>
+                        <th>Comentarios</th>
                     </tr>
                 </thead>
                 <tbody>
                     {items.map(item => (
                         <tr key={item.id} onClick={() => onItemClick(item)}>
                             <td>{item.id}</td>
-                            <td>{item.name}</td>
+                            <td>{item.claimers.find(claimer => true).name}</td>
                             <td>{item.date}</td>
-                            <td>{item.plate}</td>
-                            <td>{item.company}</td>
-                            <td>{item.amount}</td>
+                            <td>{item.claimantVehicle.plate}</td>
+                            <td>{item.claimantVehicle.insuranceCompany}</td>
+                            <td>{item.damageAmount}</td>
                             <td>{item.state}</td>
-                            <td className={classes.icon}>
+                            <td>
                                 <FontAwesomeIcon
                                     icon={faDownload}
                                     className="action-icon" />
                             </td>
-                            <td className={classes.icon}>
+                            <td>
                                 <FontAwesomeIcon
                                     icon={faEdit}
                                     className="action-icon" />
                             </td>
-                            <td className={classes.icon}>
+                            <td>
                                 <FontAwesomeIcon
                                     icon={faEnvelope}
                                     className="action-icon"

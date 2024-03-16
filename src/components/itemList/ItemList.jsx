@@ -42,21 +42,29 @@ const ItemList = ({ items, onItemClick, username }) => {
                             <td>{item.damageAmount}</td>
                             <td>{item.state}</td>
                             <td>
-                                <FontAwesomeIcon
-                                    icon={faDownload}
-                                    className="action-icon" />
+                                <button className={classes.actionButton}>
+
+                                    <FontAwesomeIcon
+                                        icon={faDownload}
+                                        className="action-icon" />
+                                </button>
                             </td>
                             <td>
-                                <FontAwesomeIcon
-                                    icon={faEdit}
-                                    className="action-icon" />
+                                <button className={classes.actionButton}>
+
+                                    <FontAwesomeIcon
+                                        icon={faEdit}
+                                        className="action-icon" />
+                                </button>
                             </td>
                             <td>
-                                <FontAwesomeIcon
-                                    icon={faEnvelope}
-                                    className="action-icon"
-                                    onClick={(event) => handleMessageClick(event, item)}
-                                />
+                                <button className={classes.actionButton}>
+                                    <FontAwesomeIcon
+                                        icon={faEnvelope}
+                                        className="action-icon"
+                                        onClick={(event) => handleMessageClick(event, item)}
+                                    />
+                                </button>
                             </td>
                         </tr>
                     ))}

@@ -55,9 +55,9 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) =>
                     <div className={classes.headerMain}>
                         <h2 className={classes.headerTitle}>Comentarios reclamo #{selectedComplaint.id}</h2>
                         <button
-                            className={classes.cerrar}
+                            className={classes.close}
                             onClick={handleCloseCommentsPopup}>
-                            <FontAwesomeIcon icon={faTimes} size="2x" />
+                            <FontAwesomeIcon icon={faTimes}/>
                         </button>
                     </div>
                     <div className={classes.dataHeader}>
@@ -69,9 +69,9 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) =>
 
                 <div>
                     {comments.length > 0 ? (
-                        <ul className={classes.listaComments}>
+                        <ul className={classes.commentsList}>
                             {comments.map((comment, index) => (
-                                <li key={index} className={classes.coment}>
+                                <li key={index} className={classes.comment}>
                                     <p><strong className={classes.username}>{comment.attributes.username}:</strong></p>
                                     <p>{comment.attributes.message}</p>
                                     <p className={classes.date}>{formatDate(comment.attributes.createdAt)}</p>

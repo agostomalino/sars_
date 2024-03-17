@@ -2,7 +2,6 @@
     margin: 20px 0;
     width: 100%;
     border-collapse: collapse;
-    /* background-color: var(--color-transparent); */
 }
 
 .tableContainer th{
@@ -28,4 +27,14 @@ td {
 .checkboxContainer input[type="checkbox"] {
     width: 16px;
     height: 16px;
+}
+.actionButton{
+    background:none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.actionButton:hover{
+    color: var(--color-azul);
 }

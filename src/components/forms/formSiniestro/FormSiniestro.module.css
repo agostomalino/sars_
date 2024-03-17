@@ -1,0 +1,53 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.select {
+    appearance: none; 
+}
+
+.submitButton {
+    color: var(--color-claro);
+    background-color: var(--color-azul);
+    display: block;
+    padding: 15px 25px;
+    cursor:pointer;
+    font-family: var(--second-font-family);
+    font-size: 16px;
+    border-radius: 50px;
+    border: 2px solid;
+    transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+.submitButton:hover {
+    color: var(--color-azul);
+    background: none;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.col {
+    flex: 1;
+
+}

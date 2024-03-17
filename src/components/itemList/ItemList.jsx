@@ -71,7 +71,7 @@ const ItemList = ({ items, onItemClick, username }) => {
                 </tbody>
             </table>
 
-            {showMessagePopup && (<CommentsPopUp selectedComplaint={selectedItem} setShowCommentsPopUp={setShowCommentsPopUp} username={username} />
+            {showMessagePopup && (<CommentsPopUp selectedComplaint={selectedItem} setShowCommentsPopUp={setShowCommentsPopUp} />
             )}
         </div>
     );

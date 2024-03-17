@@ -52,7 +52,7 @@ const ItemListContainer = () => {
                     {selectedItem ? (
                         <ItemDetail item={selectedItem} />
                     ) : (
-                        <ItemList items={items} onItemClick={handleItemClick} username={username} />
+                        <ItemList items={items} onItemClick={handleItemClick}/>
                     )}
                 </>
             )}

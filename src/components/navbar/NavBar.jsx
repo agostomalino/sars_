@@ -14,11 +14,11 @@ const NavBar = () => {
         switch (currentPath) {
             case '/':
                 newText = 'Iniciar sesión';
-                setRoute('/sars_/log-in');
+                setRoute('/log-in');
                 break;
             case '/listado':
                 newText = 'Nuevo Reclamo';
-                setRoute('/sars_/formulario');
+                setRoute('/formulario');
                 break;
             default:
                 newText = 'Inicio';

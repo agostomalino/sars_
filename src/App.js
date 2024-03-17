@@ -18,7 +18,7 @@ function App() {
     mail: "juan@gmail.com"
   }
   return (
-    <BrowserRouter  basename="/sars_">
+    <BrowserRouter>
     <NavBar />
 
     <Routes>

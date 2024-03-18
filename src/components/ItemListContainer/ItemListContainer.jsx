@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import ItemList from '../itemList/ItemList';
 import ItemDetail from '../itemDetail/ItemDetail';
 import classes from './ItemListContainer.module.css';
+import config from '../../config';
 
 const ItemListContainer = () => {
+    const apiUrl = config.apiUrl;
     const username = localStorage.getItem('username');
+    
     const [selectedItem, setSelectedItem] = useState(null);
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +16,7 @@ const ItemListContainer = () => {
         const fetchItems = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch('http://34.176.123.248/api/claims?populate=claimers,claimants,claimantVehicle,claimerVehicle,comments', {
+                const response = await fetch(`${apiUrl}/api/claims?populate=claimers,claimants,claimantVehicle,claimerVehicle,comments`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     }

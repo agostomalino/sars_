@@ -4,8 +4,12 @@ import ResetPasswordPopUp from '../resetPasswordPopUp/ResetPasswordPopUp';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import config from '../../config';
 
 const LogIn = () => {
+    const apiUrl = config.apiUrl;
+    console.log(apiUrl)
+
     const navigate = useNavigate();
 
     const [username, setUsername] = useState('UsuarioDePrueba');
@@ -18,7 +22,7 @@ const LogIn = () => {
             console.log("Username or password is empty");
             return;
         }
-        axios.post('http://34.176.123.248/api/auth/local', {
+        axios.post(`${apiUrl}/api/auth/local`, {
             identifier: username,
             password: password
         }).then(response => {

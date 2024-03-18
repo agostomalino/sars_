@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import classes from './commentsPopUp.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import config from '../../config';
 
 const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp }) => {
+    const apiUrl = config.apiUrl;
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
-    const url = 'http://34.176.123.248';
 
     const [currentComment, setCurrentComment] = useState('');
     const [comments, setComments] = useState([]);
@@ -17,7 +18,7 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp }) => {
 
     const getComments = async () => {
         try {
-            const response = await fetch(`${url}/api/claims/${selectedComplaint.id}?populate=comments`, {
+            const response = await fetch(`${apiUrl}/api/claims/${selectedComplaint.id}?populate=comments`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -50,7 +51,7 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp }) => {
                 })
             };
 
-            const commentResponse = await fetch(`${url}/api/comments/`, commentRequestOptions);
+            const commentResponse = await fetch(`${apiUrl}/api/comments/`, commentRequestOptions);
 
             if (!commentResponse.ok) {
                 throw new Error('Network response was not ok');
@@ -72,7 +73,7 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp }) => {
                     }
                 })
             };
-            const claimResponse = await fetch(`${url}/api/claims/${selectedComplaint.id}`, claimRequestOptions);
+            const claimResponse = await fetch(`${apiUrl}/api/claims/${selectedComplaint.id}`, claimRequestOptions);
 
             if (!claimResponse.ok) {
                 throw new Error('Network response was not ok');

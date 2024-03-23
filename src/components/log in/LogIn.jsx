@@ -11,8 +11,8 @@ const LogIn = () => {
 
     const navigate = useNavigate();
 
-    const [username, setUsername] = useState('UsuarioDePrueba');
-    const [password, setPassword] = useState('12341234');
+    const [username, setUsername] = useState('juancruzmasjoan');
+    const [password, setPassword] = useState('admin123');
     const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = (e) => {

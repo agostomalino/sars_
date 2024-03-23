@@ -22,7 +22,7 @@ const NavBar = () => {
                 break;
             default:
                 newText = 'Inicio';
-                setRoute('/');
+                setRoute('/sars_/');
                 break;
         }
 

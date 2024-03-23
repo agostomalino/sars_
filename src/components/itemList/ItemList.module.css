@@ -2,7 +2,10 @@
     margin: 20px 0;
     width: 100%;
     border-collapse: collapse;
+    font-size: 13px;
 }
+
+/* --------------table header-------------- */
 
 .tableContainer th{
     border-bottom: 1px solid var(--color-azul);
@@ -10,6 +13,8 @@
     text-align: center;
     background-color: #f2f2f2;
 }
+
+/* --------------table row-------------- */
 
 .tableContainer tr:nth-child(even) {
     background-color: #f9f9f9;
@@ -19,15 +24,15 @@
     background-color: #b7b3ffb1;
 }
 
+/* --------------table data-------------- */
+
 td {
     padding: 5px 10px;
     text-align: center;
 }
 
-.checkboxContainer input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-}
+/* --------------action button-------------- */
+
 .actionButton{
     background:none;
     border: none;
@@ -37,4 +42,11 @@ td {
 
 .actionButton:hover{
     color: var(--color-azul);
+}
+
+/* --------------amount input field-------------- */
+.amountInput{
+    text-align: center;
+    font-size: 13px;
+    width: 50%;
 }

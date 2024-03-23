@@ -8,7 +8,6 @@ import config from '../../config';
 
 const LogIn = () => {
     const apiUrl = config.apiUrl;
-    console.log(apiUrl)
 
     const navigate = useNavigate();
 
@@ -26,7 +25,7 @@ const LogIn = () => {
             identifier: username,
             password: password
         }).then(response => {
-            localStorage.setItem('username', `${response.data.user.name} ${response.data.user.lastname}`);
+            localStorage.setItem('userId', response.data.user.id);
             localStorage.setItem('token', response.data.jwt);
             navigate('/listado');
         })

@@ -1,0 +1,50 @@
+.formReclamante {
+    max-width: 900px;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.formReclamante label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formReclamante input[type="text"],
+.formReclamante input[type="tel"],
+.formReclamante input[type="email"]{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formReclamante input[type="checkbox"]{
+    width: 18px;
+    margin: 5px;
+}
+
+.submitButton {
+    color: var(--color-claro);
+    background-color: var(--color-azul);
+    display: block;
+    padding: 15px 25px;
+    cursor:pointer;
+    font-family: var(--second-font-family);
+    font-size: 16px;
+    border-radius: 50px;
+    border: 2px solid;
+    transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+.submitButton:hover {
+    color: var(--color-azul);
+    background: none;
+}
+
+.checkb{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

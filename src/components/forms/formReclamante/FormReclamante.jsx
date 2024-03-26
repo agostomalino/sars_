@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import classes from './FormReclamante.module.css';
 
 const FormReclamante = () => {
         const [isHolder, setIsHolder] = useState(false);
@@ -34,22 +35,26 @@ const FormReclamante = () => {
     
         return (
             <div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className={classes.formReclamante}>
                     <label>
-                        <input
-                            type="checkbox"
-                            checked={isHolder}
-                            onChange={(e) => setIsHolder(e.target.checked)}
-                        />
-                        Titular
+                        <div className={classes.checkb}>
+                                <p>Titular</p>
+                                <input
+                                    type="checkbox"
+                                    checked={isHolder}
+                                    onChange={(e) => setIsHolder(e.target.checked)}
+                                />
+                        </div>
                     </label>
                     <label>
+                    <div className={classes.checkb}>
+                        <p>Lesionado</p>
                         <input
                             type="checkbox"
                             checked={isInjured}
                             onChange={(e) => setIsInjured(e.target.checked)}
                         />
-                        Lesionado
+                        </div>
                     </label>
                     <div>
                         <label>Número de documento:</label>
@@ -98,15 +103,17 @@ const FormReclamante = () => {
                     </div>
                     <div>
                         <label>
-                            <input
-                                type="checkbox"
-                                checked={isLegalEntity}
-                                onChange={(e) => setIsLegalEntity(e.target.checked)}
-                            />
-                            Es persona juridica?
+                            <div className={classes.checkb}>
+                                <p>Es persona juridica?</p>
+                                <input
+                                    type="checkbox"
+                                    checked={isLegalEntity}
+                                    onChange={(e) => setIsLegalEntity(e.target.checked)}
+                                />
+                            </div>
                         </label>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className={classes.submitButton}>Submit</button>
                 </form>
             </div>
         );

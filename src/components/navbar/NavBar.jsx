@@ -11,23 +11,29 @@ const NavBar = () => {
     useEffect(() => {
         const currentPath = location.pathname;
         let buttonText = '';
-
+        let route = '';
+    
         switch (currentPath) {
             case '/':
                 buttonText = 'Iniciar sesión';
-                setRoute('/log-in');
+                route = '/log-in';
                 break;
             case '/listado':
                 buttonText = 'Nuevo Reclamo';
-                setRoute('/formulario');
+                route = '/formulario';
                 break;
             default:
-                newText = 'Inicio';
-                setRoute('/sars_/');
+                buttonText = 'Inicio';
+                route = '/sars_/';
                 break;
         }
-
+    
+        console.log('currentPath:', currentPath);
+        console.log('buttonText:', buttonText);
+        console.log('route:', route);
+    
         setButtonText(buttonText);
+        setRoute(route);
     }, [location.pathname]);
 
     const handleButtonClick = () => {
@@ -43,7 +49,7 @@ const NavBar = () => {
                 <Link to="/" className={classes.logo}><h1 className='logo-h'>SACS</h1></Link>
             </div>
             <div className={classes.headerRight}>
-                {showActionButton && <button className={classes.btn} onClick={handleButtonClick}>{buttonText}</button>}
+            <button className={classes.btn} style={{ display: 'block' }} onClick={handleButtonClick}>{buttonText}</button>
             </div>
         </header>
     )

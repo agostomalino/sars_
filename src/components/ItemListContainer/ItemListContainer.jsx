@@ -1,19 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from '../itemList/ItemList';
-import ItemDetail from '../itemDetail/ItemDetail';
 import classes from './ItemListContainer.module.css';
+import config from '../../config';
 
 const ItemListContainer = () => {
-    const username = localStorage.getItem('username');
-    const [selectedItem, setSelectedItem] = useState(null);
+    const apiUrl = config.apiUrl;
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+
     const [items, setItems] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isUserLoaded, setIsUserLoaded] = useState(false);
+    const [areItemsLoaded, setAreItemsLoaded] = useState(false);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
+
+        const fetchUser = async () => {
+            const response = await fetch(`${apiUrl}/api/users/${userId}?populate=role`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            localStorage.setItem('userRole', data.role.name);
+
+            setUser(data);
+            setIsUserLoaded(true);
+        }
+
         const fetchItems = async () => {
             try {
-                const token = localStorage.getItem('token');
-                const response = await fetch('http://34.176.123.248/api/claims?populate=claimers,claimants,claimantVehicle,claimerVehicle,comments', {
+                const response = await fetch(`${apiUrl}/api/claims?populate=claimers,claimants,claimantVehicle,claimerVehicle,comments`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     }
@@ -25,37 +46,31 @@ const ItemListContainer = () => {
                 const data = await response.json();
 
                 const processedClaims = processClaims(data);
-                console.log('ya procesados', processClaims(data))
 
                 setItems(processedClaims);
-                setIsLoading(false);
+                setAreItemsLoaded(true);
             } catch (error) {
                 console.error('Error fetching items:', error);
             }
         };
 
+        fetchUser();
         fetchItems();
     }, []);
-
-    const handleItemClick = item => {
-        setSelectedItem(item);
-    };
 
     return (
         <div className={classes.section}>
             <h4>Listado de Reclamos</h4>
-            {isLoading ? (
-                <p>Loading...</p>
-            ) : (
-                <>
-                    <h5>User: {username}</h5>
-                    {selectedItem ? (
-                        <ItemDetail item={selectedItem} />
-                    ) : (
-                        <ItemList items={items} onItemClick={handleItemClick} username={username} />
-                    )}
-                </>
-            )}
+            {(isUserLoaded && areItemsLoaded) ?
+                (
+                    <>
+                        <h5>User: {user.name + user.lastname}</h5>
+                        <ItemList items={items} />
+                    </>
+                ) : (
+                    <p>Loading...</p>
+                )
+            }
         </div>
     );
 };

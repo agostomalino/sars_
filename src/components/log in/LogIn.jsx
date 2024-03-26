@@ -4,12 +4,15 @@ import ResetPasswordPopUp from '../resetPasswordPopUp/ResetPasswordPopUp';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import config from '../../config';
 
 const LogIn = () => {
+    const apiUrl = config.apiUrl;
+
     const navigate = useNavigate();
 
-    const [username, setUsername] = useState('UsuarioDePrueba');
-    const [password, setPassword] = useState('12341234');
+    const [username, setUsername] = useState('juancruzmasjoan');
+    const [password, setPassword] = useState('admin123');
     const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = (e) => {
@@ -18,11 +21,11 @@ const LogIn = () => {
             console.log("Username or password is empty");
             return;
         }
-        axios.post('http://34.176.123.248/api/auth/local', {
+        axios.post(`${apiUrl}/api/auth/local`, {
             identifier: username,
             password: password
         }).then(response => {
-            localStorage.setItem('username', `${response.data.user.name} ${response.data.user.lastname}`);
+            localStorage.setItem('userId', response.data.user.id);
             localStorage.setItem('token', response.data.jwt);
             navigate('/listado');
         })

@@ -12,19 +12,15 @@ import Formulario from './components/form/Formulario';
 library.add(faScaleBalanced);
 
 function App() {
-  const user = { 
-    name:'Juan Cruz Masjoan',
-    id: 1234,
-    mail: "juan@gmail.com"
-  }
+
   return (
-    <BrowserRouter  basename="/sars_">
+    <BrowserRouter>
     <NavBar />
 
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/log-in" element={<LogIn />}/>
-      <Route path='/listado' element={<ItemListContainer username={user.name}/>}/>
+      <Route path='/listado' element={<ItemListContainer/>}/>
       <Route path='/formulario' element={<Formulario/>}/>
     </Routes>
     <Footer />

@@ -2,33 +2,89 @@ import React, { useState, useEffect } from 'react';
 import classes from './commentsPopUp.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import config from '../../config';
 
-const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) => {
+const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp }) => {
+    const apiUrl = config.apiUrl;
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+
     const [currentComment, setCurrentComment] = useState('');
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        const fetchItems = async () => {
-            try {
-                const token = localStorage.getItem('token');
-                const response = await fetch(`http://34.176.123.248/api/claims/${selectedComplaint.id}?populate=comments`, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                    }
-                });
+        getComments();
+    }, []);
 
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+    const getComments = async () => {
+        try {
+            const response = await fetch(`${apiUrl}/api/claims/${selectedComplaint.id}?populate=comments`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
                 }
-                const data = await response.json();
-                setComments(data.data.attributes.comments.data);
-            } catch (error) {
-                console.error('Error fetching items:', error);
-            }
-        };
+            });
 
-        fetchItems();
-    });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setComments(data.data.attributes.comments.data);
+        } catch (error) {
+            console.error('Error fetching items:', error);
+        }
+    };
+
+    // Para agregar un comment la unica forma que encontré en Strapi es creando el comment y luego conectandolo al claim
+    const addComment = async (newComment) => {
+        try {
+            const commentRequestOptions = {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    data: {
+                        username: newComment.user,
+                        message: newComment.text,
+                    }
+                })
+            };
+
+            const commentResponse = await fetch(`${apiUrl}/api/comments/`, commentRequestOptions);
+
+            if (!commentResponse.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const commentData = await commentResponse.json();
+            const commentId = commentData.data.id
+
+            const claimRequestOptions = {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    data: {
+                        comments: {
+                            connect: [commentId]
+                        }
+                    }
+                })
+            };
+            const claimResponse = await fetch(`${apiUrl}/api/claims/${selectedComplaint.id}`, claimRequestOptions);
+
+            if (!claimResponse.ok) {
+                throw new Error('Network response was not ok');
+            }
+            setComments([...comments, commentData.data]);
+            setCurrentComment('');
+
+        } catch (error) {
+            console.error('Error fetching items:', error);
+        }
+    };
 
     const handleCloseCommentsPopup = () => {
         setShowCommentsPopUp(false);
@@ -41,9 +97,8 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) =>
     const handleCommentSubmit = (event) => {
         event.preventDefault();
         if (currentComment.trim() !== '') {
-            const newComment = { text: currentComment, date: new Date().toLocaleString(), user: username };
-            setComments([...comments, newComment]);
-            setCurrentComment('');
+            const newComment = { text: currentComment, user: username };
+            addComment(newComment)
         }
     };
 
@@ -57,7 +112,7 @@ const CommentsPopUp = ({ selectedComplaint, setShowCommentsPopUp, username }) =>
                         <button
                             className={classes.close}
                             onClick={handleCloseCommentsPopup}>
-                            <FontAwesomeIcon icon={faTimes}/>
+                            <FontAwesomeIcon icon={faTimes} />
                         </button>
                     </div>
                     <div className={classes.dataHeader}>
@@ -103,10 +158,10 @@ export default CommentsPopUp;
 function formatDate(dateString) {
     const date = new Date(dateString);
     const formattedDate = date.toLocaleDateString('es-AR', {
-      year: '2-digit',
-      month: '2-digit',
-      day: '2-digit',
+        year: '2-digit',
+        month: '2-digit',
+        day: '2-digit',
     });
     const time = date.toLocaleTimeString([], { hour12: false });
     return `${formattedDate} | ${time}`;
-  }
+}

@@ -1,20 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import ItemList from '../itemList/ItemList';
-import classes from './ItemListContainer.module.css';
 import config from '../../config';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+import classes from './ItemListContainer.module.css';
+import 'react-tabs/style/react-tabs.css'; // Estilos por defecto de react-tabs
 
 const ItemListContainer = () => {
     const apiUrl = config.apiUrl;
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
 
+    const estados = useMemo(() => [
+        'Cargado',
+        'Reclamo ingresado',
+        'Instancia judicial',
+        'Pendiente de liquidación',
+        'A liquidar',
+        'Finalizado',
+        'Rechazado'
+    ], []);
+
     const [items, setItems] = useState([]);
     const [isUserLoaded, setIsUserLoaded] = useState(false);
     const [areItemsLoaded, setAreItemsLoaded] = useState(false);
     const [user, setUser] = useState(null);
+    const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
     useEffect(() => {
+        if (user && user.role && user.role.name === 'Agent') { //TODO: Improve this
+            estados.unshift('Creado');
+        }
+    });
 
+    useEffect(() => {
         const fetchUser = async () => {
             const response = await fetch(`${apiUrl}/api/users/${userId}?populate=role`, {
                 headers: {
@@ -26,15 +45,20 @@ const ItemListContainer = () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            localStorage.setItem('userRole', data.role.name);
+
+            localStorage.setItem('userRole',data.role.name);
 
             setUser(data);
             setIsUserLoaded(true);
         }
 
+        fetchUser();
+    }, []);
+
+    useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await fetch(`${apiUrl}/api/claims?populate=claimers,claimants,claimantVehicle,claimerVehicle,comments`, {
+                const response = await fetch(`${apiUrl}/api/claims?populate=claimers,claimants,claimantVehicle,claimerVehicle,comments,agent&filters[state][$eq]=${estados[selectedTabIndex]}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     }
@@ -44,7 +68,6 @@ const ItemListContainer = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-
                 const processedClaims = processClaims(data);
 
                 setItems(processedClaims);
@@ -54,9 +77,8 @@ const ItemListContainer = () => {
             }
         };
 
-        fetchUser();
         fetchItems();
-    }, []);
+    }, [estados, selectedTabIndex, apiUrl, token]);
 
     return (
         <div className={classes.section}>
@@ -64,8 +86,19 @@ const ItemListContainer = () => {
             {(isUserLoaded && areItemsLoaded) ?
                 (
                     <>
-                        <h5>User: {user.name + user.lastname}</h5>
-                        <ItemList items={items} />
+        <h5>User: {user && `${user.name} ${user.lastname}`}</h5>
+                        <Tabs onSelect={(selectedIndex) => setSelectedTabIndex(selectedIndex)}>
+                            <TabList defaultIndex={0} >
+                                {estados.map((estado, index) => (
+                                    <Tab key={index}>{estado}</Tab>
+                                ))}
+                            </TabList>
+                            {estados.map((estado, index) => (
+                                <TabPanel key={index}>
+                                    <ItemList items={items} />
+                                </TabPanel>
+                            ))}
+                        </Tabs>
                     </>
                 ) : (
                     <p>Loading...</p>

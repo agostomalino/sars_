@@ -47,7 +47,7 @@ const LogIn = () => {
     return (
         <div className={classes.container}>
             <div className={classes.box}>
-                <h2 className={classes.title}>Iniciar Sesión</h2>
+                <h2 className={classes.title}>Iniciar sesión</h2>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <div className={classes.boxData}>

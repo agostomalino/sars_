@@ -37,14 +37,21 @@
 
 .row {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     gap: 25px;
+    align-items: center;
 }
 
 .col {
     flex: 1;
 }
 
+.checkRow{
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    justify-content: flex-start; 
+}
 
 .checkboxContainer {
     display: flex;
@@ -52,8 +59,8 @@
 }
 
 .checkbox {
-    width: 15px;
-    margin-right: 5px; 
+    width: 20px;
+    margin: auto 10px;
 }
 
 .checkboxLabel {

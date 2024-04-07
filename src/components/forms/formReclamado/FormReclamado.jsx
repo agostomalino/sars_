@@ -20,32 +20,32 @@ const FormReclamado = () => {
     return (
         <form onSubmit={handleSubmit} className={classes.container}>
             <div className={classes.row}>
-                <div className={classes.col}>
+                <div className={classes.checkRow}>
                     <label htmlFor="titular" className={classes.label}>Titular:</label>
-                    <div className={classes.checkboxContainer}>
-                        <label>
-                            <input
-                                type="checkbox"
-                                checked={titular}
-                                onChange={() => setTitular(!titular)}
-                                className={classes.checkbox}
-                            /> 
-                        </label>
+                        <div className={classes.checkboxContainer}>
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    checked={titular}
+                                    onChange={() => setTitular(!titular)}
+                                    className={classes.checkbox}
+                                /> 
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div className={classes.col}>
-                    <label htmlFor="lesionado" className={classes.label}>Lesionado:</label>
-                    <div className={classes.checkboxContainer}>
-                        <label>
-                            <input
-                                type="checkbox"
-                                checked={lesionado}
-                                onChange={() => setLesionado(!lesionado)}
-                                className={classes.checkbox}
-                            />
-                        </label>
-                    </div>
-                </div>
+                        <div className={classes.checkRow}>
+                            <label htmlFor="lesionado" className={classes.label}>Lesionado:</label>
+                            <div className={classes.checkboxContainer}>
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        checked={lesionado}
+                                        onChange={() => setLesionado(!lesionado)}
+                                        className={classes.checkbox}
+                                    />
+                                </label>
+                            </div>
+                        </div>
             </div>
             <div className={classes.row}>
                 <div className={classes.col}>
@@ -118,22 +118,24 @@ const FormReclamado = () => {
             <div className={classes.row}>
                 <div className={classes.col}>
                     <label className={classes.label}>Es persona jurídica:</label>
-                    <div className={classes.checkboxContainer}>
-                        <label>
+                    <div className={classes.checkRow}>
+                        <label className={classes.checkRow}>
+                            Si
                             <input
                                 type="checkbox"
                                 checked={esPersonaJuridica}
                                 onChange={() => setEsPersonaJuridica(!esPersonaJuridica)}
                                 className={classes.checkbox}
-                            /> SI
+                            />
                         </label>
-                        <label>
+                        <label className={classes.checkRow}>
+                            No
                             <input
                                 type="checkbox"
                                 checked={!esPersonaJuridica}
                                 onChange={() => setEsPersonaJuridica(!esPersonaJuridica)}
                                 className={classes.checkbox}
-                            /> NO
+                            />
                         </label>
                     </div>
                 </div>

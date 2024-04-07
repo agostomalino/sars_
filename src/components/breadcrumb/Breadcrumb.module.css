@@ -16,14 +16,14 @@
     margin-right: 5px;
 }
 
-.breadcrumbItem:last-child {
+/* .breadcrumbItem:last-child {
     font-weight: bold;
-}
+} */
 
-.breadcrumbItem:last-child a {
+/* .breadcrumbItem:last-child a {
     pointer-events: none;
     cursor: default;
-}
+} */
 
 .breadcrumbItem:not(:last-child)::after {
     content: '>';

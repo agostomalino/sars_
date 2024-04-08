@@ -12,7 +12,7 @@ const NavBar = () => {
         const currentPath = location.pathname;
         let buttonText = '';
         let route = '';
-    
+
         switch (currentPath) {
             case '/':
                 buttonText = 'Iniciar sesión';
@@ -27,11 +27,11 @@ const NavBar = () => {
                 route = '/sars_/';
                 break;
         }
-    
+
         console.log('currentPath:', currentPath);
         console.log('buttonText:', buttonText);
         console.log('route:', route);
-    
+
         setButtonText(buttonText);
         setRoute(route);
     }, [location.pathname]);
@@ -49,7 +49,7 @@ const NavBar = () => {
                 <Link to="/" className={classes.logo}><h1 className='logo-h'>SACS</h1></Link>
             </div>
             <div className={classes.headerRight}>
-            <button className={classes.btn} style={{ display: 'block' }} onClick={handleButtonClick}>{buttonText}</button>
+                {showActionButton && <button className={classes.btn} style={{ display: 'block' }} onClick={handleButtonClick}>{buttonText}</button>}
             </div>
         </header>
     )

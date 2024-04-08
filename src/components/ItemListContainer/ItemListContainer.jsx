@@ -46,7 +46,7 @@ const ItemListContainer = () => {
                 throw new Error('Network response was not ok');
             }
 
-            localStorage.setItem('userRole',data.role.name);
+            localStorage.setItem('userRole', data.role.name);
 
             setUser(data);
             setIsUserLoaded(true);
@@ -86,7 +86,7 @@ const ItemListContainer = () => {
             {(isUserLoaded && areItemsLoaded) ?
                 (
                     <>
-        <h5>User: {user && `${user.name} ${user.lastname}`}</h5>
+                        <h5>User: {user && `${user.name} ${user.lastname}`}</h5>
                         <Tabs onSelect={(selectedIndex) => setSelectedTabIndex(selectedIndex)}>
                             <TabList defaultIndex={0} >
                                 {estados.map((estado, index) => (

@@ -16,7 +16,7 @@ const ResetPasswordPopUp = ({ handleClose, show }) => {
         //     email: email
         // }).then(response => {
         //     console.log(response)
-        //     navigate('/log-in');
+        //     navigate('/login');
         // })
         //     .catch(error => {
         //         console.log('An error occurred:', error.response);

@@ -16,7 +16,7 @@ const NavBar = () => {
         switch (currentPath) {
             case '/':
                 buttonText = 'Iniciar sesión';
-                route = '/log-in';
+                route = '/login';
                 break;
             case '/listado':
                 buttonText = 'Nuevo Reclamo';

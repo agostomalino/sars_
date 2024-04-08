@@ -19,7 +19,7 @@ function App() {
 
     <Routes>
       <Route path="/" element={<Home />}/>
-      <Route path="/log-in" element={<LogIn />}/>
+      <Route path="/login" element={<LogIn />}/>
       <Route path='/listado' element={<ItemListContainer/>}/>
       <Route path='/formulario' element={<Formulario/>}/>
     </Routes>

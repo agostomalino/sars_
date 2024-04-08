@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import ItemList from '../itemList/ItemList';
+import ClaimsList from '../claimList/claimList';
 import config from '../../config';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import classes from './ItemListContainer.module.css';
+import classes from './claimsListContainer.module.css';
 import 'react-tabs/style/react-tabs.css'; // Estilos por defecto de react-tabs
 
-const ItemListContainer = () => {
+const ClaimsListContainer = () => {
     const apiUrl = config.apiUrl;
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('userId');
@@ -82,7 +82,7 @@ const ItemListContainer = () => {
 
     return (
         <div className={classes.section}>
-            <h4>Listado de Reclamos</h4>
+            <h4>Listado de reclamos</h4>
             {(isUserLoaded && areItemsLoaded) ?
                 (
                     <>
@@ -95,7 +95,7 @@ const ItemListContainer = () => {
                             </TabList>
                             {estados.map((estado, index) => (
                                 <TabPanel key={index}>
-                                    <ItemList items={items} />
+                                    <ClaimsList items={items} />
                                 </TabPanel>
                             ))}
                         </Tabs>
@@ -108,7 +108,7 @@ const ItemListContainer = () => {
     );
 };
 
-export default ItemListContainer;
+export default ClaimsListContainer;
 
 // Función para procesar los reclamos y dejarlos en un formato más manejable
 const processClaims = (claims) => {

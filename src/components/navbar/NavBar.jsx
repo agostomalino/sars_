@@ -18,13 +18,13 @@ const NavBar = () => {
                 buttonText = 'Iniciar sesión';
                 route = '/login';
                 break;
-            case '/listado':
+            case '/reclamos':
                 buttonText = 'Nuevo Reclamo';
-                route = '/formulario';
+                route = '/reclamos/nuevo';
                 break;
             default:
                 buttonText = 'Inicio';
-                route = '/sars_/';
+                route = '/sars_/'; // TODO: Change this
                 break;
         }
 

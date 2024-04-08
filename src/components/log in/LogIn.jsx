@@ -27,7 +27,7 @@ const LogIn = () => {
         }).then(response => {
             localStorage.setItem('userId', response.data.user.id);
             localStorage.setItem('token', response.data.jwt);
-            navigate('/listado');
+            navigate('/reclamos');
         })
             .catch(error => {
                 console.log('An error occurred:', error.response);

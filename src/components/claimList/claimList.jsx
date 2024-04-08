@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faEdit, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import CommentsPopUp from '../commentsPopUp/commentsPopUp';
-import classes from './ItemList.module.css';
+import classes from './claimList.module.css';
 
-const ItemList = ({ items }) => {
+const ClaimsList = ({ items }) => {
     const userRole = localStorage.getItem('userRole')
     const showSettlementAmount = userRole === 'Administrator' || userRole === 'Agent';
     const showDaysInCurrentState = userRole === 'Administrator';
@@ -92,4 +92,4 @@ const ItemList = ({ items }) => {
     );
 };
 
-export default ItemList;
+export default ClaimsList;

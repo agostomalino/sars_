@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import classes from './FormReclamado.module.css'; 
+import classes from './tabReclamado.module.css'; 
 
-const FormReclamado = () => {
+const TabReclamado = () => {
     const [titular, setTitular] = useState(false);
     const [lesionado, setLesionado] = useState(false);
     const [numeroDocumento, setNumeroDocumento] = useState('');
@@ -145,4 +145,4 @@ const FormReclamado = () => {
     );
 }
 
-export default FormReclamado;
+export default TabReclamado;

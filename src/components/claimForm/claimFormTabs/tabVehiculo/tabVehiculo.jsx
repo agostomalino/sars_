@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import classes from './FormVehiculo.module.css';
+import classes from './tabVehiculo.module.css';
 
-const FormVehiculo = () => {
+const TabVehiculo = () => {
     const [dominio, setDominio] = useState('');
     const [tipoVehiculo, setTipoVehiculo] = useState('');
     const [marcaModelo, setMarcaModelo] = useState('');
@@ -122,4 +122,4 @@ const FormVehiculo = () => {
     );
 }
 
-export default FormVehiculo;
+export default TabVehiculo;

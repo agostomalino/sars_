@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import classes from './FormSiniestro.module.css';
+import classes from './tabSiniestro.module.css';
 
 const provinciasArgentinas = [
     "Buenos Aires",
@@ -27,7 +27,7 @@ const provinciasArgentinas = [
     "Tucumán"
 ];
 
-const FormSiniestro = () => {
+const TabSiniestro = () => {
     // Estados para cada campo del formulario
     const [fecha, setFecha] = useState('');
     const [hora, setHora] = useState('');
@@ -225,4 +225,4 @@ const FormSiniestro = () => {
         </div>
     );
 }
-export default FormSiniestro;
+export default TabSiniestro;

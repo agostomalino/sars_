@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import classes from './FormTercero.module.css'; 
+import classes from './tabVehiculoTercero.module.css'; 
 
-const FormTercero = () => {
+const TabVehiculoTercero = () => {
 
     const [tipoVehiculo, setTipoVehiculo] = useState('');
     const [marcaModelo, setMarcaModelo] = useState('');
@@ -107,4 +107,4 @@ const FormTercero = () => {
 }
 
 
-export default FormTercero;
+export default TabVehiculoTercero;

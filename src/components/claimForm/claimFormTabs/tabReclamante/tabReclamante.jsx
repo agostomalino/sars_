@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import classes from './FormReclamante.module.css';
+import classes from './tabReclamante.module.css';
 
-const FormReclamante = () => {
+const TabReclamante = () => {
         const [isHolder, setIsHolder] = useState(false);
         const [isInjured, setIsInjured] = useState(false);
         const [documentNumber, setDocumentNumber] = useState('');
@@ -119,4 +119,4 @@ const FormReclamante = () => {
         );
 }
 
-export default FormReclamante
+export default TabReclamante
